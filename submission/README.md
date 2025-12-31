@@ -39,15 +39,13 @@ Frontend (React + ethers)
 
 ## 🔗 Deployed Contracts (Sepolia)
 
-> ✨ Replace with your real contract links.
-
 **Token (FaucetToken)**  
 `<YOUR_TOKEN_ADDRESS>`  
-Etherscan: https://sepolia.etherscan.io/address/<YOUR_TOKEN_ADDRESS>
+Etherscan: https://sepolia.etherscan.io/address/0xcd7184199F7f614F09C40dfaD5d2b383723597aE
 
 **Faucet (TokenFaucet)**  
 `<YOUR_FAUCET_ADDRESS>`  
-Etherscan: https://sepolia.etherscan.io/address/<YOUR_FAUCET_ADDRESS>
+Etherscan: https://sepolia.etherscan.io/address/0x77fAC3F0EA4eFEB1D0e44F5F026AA9E156e7aC24
 
 Both contracts are verified.
 
@@ -91,3 +89,39 @@ Copy code
 
 ```bash
 npm install
+
+npx hardhat compile
+
+npx hardhat run scripts/deploy.js --network sepolia
+
+## .env.example file
+SEPOLIA_RPC=
+PRIVATE_KEY=
+ETHERSCAN_KEY=
+VITE_RPC_URL=
+VITE_TOKEN_ADDRESS=
+VITE_FAUCET_ADDRESS=
+
+## Frontend
+cd frontend
+npm install
+npm run dev
+
+-server runs at
+http://localhost:5173
+
+## Docker Deployment
+
+docker compose up
+
+App available at
+http://localhost:3000
+
+Health endpoint:
+
+http://localhost:3000/health
+
+Must return:
+
+OK
+http://localhost:5173
